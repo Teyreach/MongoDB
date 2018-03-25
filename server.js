@@ -7,6 +7,8 @@ const app = express()
 
 app.get('/', (req, res) => res.send('Hello World!'))
 
+//app.get('/zadanie', function(req, res){}
+
 app.listen(PORT, () => console.log('Example app listening on port 3000!'))
 
 mongoose.Promise = global.Promise;
@@ -128,7 +130,7 @@ const findMarkAndDelete = function() {
     return User.findOne({ username: 'Mark_the_boy' })
         .then(function(user) {
             return user.remove(function(err) {
-				if (err) throw err;
+				
                 console.log('User successfully deleted');
             });
         })
@@ -139,7 +141,7 @@ const findKennyAndDelete = function() {
     return User.findOne({ username: 'Kenny_the_boy' })
         .then(function(user) {
             return user.remove(function(err) {
-				if (err) throw err;
+				
                 console.log('User successfully deleted');
             });
         });
@@ -150,7 +152,7 @@ const findBennyAndRemove = function() {
     return User.findOneAndRemove({ username: 'Benny_the_man' })
         .then(function(user) {
             return user.remove(function(err) {
-				if (err) throw err;
+				
                 console.log('User successfully deleted');
             });
         });

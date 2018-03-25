@@ -119,7 +119,8 @@ const findMarkAndDelete = function() {
     // find specific user and delete
     return User.findOne({ username: 'Mark_the_boy' })
         .then(function(user) {
-            return user.remove(function() {
+            return user.remove(function(err) {
+				if (err) throw err;
                 console.log('User successfully deleted');
             });
         })
@@ -129,7 +130,8 @@ const findKennyAndDelete = function() {
     // find specific user and delete
     return User.findOne({ username: 'Kenny_the_boy' })
         .then(function(user) {
-            return user.remove(function() {
+            return user.remove(function(err) {
+				if (err) throw err;
                 console.log('User successfully deleted');
             });
         });
@@ -139,7 +141,8 @@ const findBennyAndRemove = function() {
     // find specific user and delete
     return User.findOneAndRemove({ username: 'Benny_the_man' })
         .then(function(user) {
-            return user.remove(function() {
+            return user.remove(function(err) {
+				if (err) throw err;
                 console.log('User successfully deleted');
             });
         });
